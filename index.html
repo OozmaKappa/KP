@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="kp">
+<head>
+	<title>Kreativ-Perspektive</title>
+	
+	<script type="text/javascript" src="js/lib/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/resize.js"></script>
+	<script type="text/javascript" src="js/gallery.js"></script>
+	<script type="text/javascript" src="js/directive.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main2.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+	
+</head>
+
+<body id="home" ng-controller="MainController" 	>
+	<div class="header main" ng-style='leftScrollStyle' fixedx>
+		<!-- <div class="logo"> -->
+			<img id="logo" src="img/Logo_260x72.jpg">
+		<!-- </div> -->
+		<div class="navigation">
+			<a class="navigation" ng-class="homeActive" href="#">HOME</a>
+			<span class="galleries">
+				<a class="navigation" ng-class="galleryActive" href="#/gallery">GALLERIES</a>
+				<div class="submenu rounded-corners">
+					<ul class="navigation">
+						<li ng-repeat="theme in galleryService.galleries">
+							<a class="navigation"  href="#/gallery/{{theme.name}}">{{theme.name}}</a></li>
+					</ul>
+				</div>
+			</span>
+			<span>
+				<a id="getInTouch_nav" class="navigation" href="getInTouch.html">GET IN TOUCH</a>
+				<div class="submenu rounded-corners">
+					<ul class="navigation">
+						<li><a class="navigation" id="" href="">e-mail</a></li>
+						<li><a class="navigation" id="" href="">blog</a></li>
+					</ul>
+				</div>
+			</span>
+		</div>
+	</div>
+	
+
+	<div class="content main" ng-mouseenter="showNaviagationArrow=true" ng-mouseleave="showNaviagationArrow=false">
+		
+		<div class="scroll">
+			<img  ng-repeat="path in imagePathes" src="{{path}}">
+			
+			<div class="scroll-left" ng-style='leftScrollStyle'>
+				<img class="scroll pointer" src="img/pfeil_links.png" 
+					ng-mousedown="scroll('left')"
+					ng-mouseup="stopScrolling()">
+				<!-- <img class="scroll pointer" src="img/pfeil_links.png" 
+					ng-show="showNaviagationArrow"
+					ng-mousedown="scroll('left')"
+					ng-mouseup="stopScrolling()"> -->
+			</div>
+			<div class="scroll-right" ng-style='rightScrollStyle'>
+				<img class="scroll pointer" src="img/pfeil_rechts.png" 
+					ng-mousedown="scroll('right')"
+					ng-mouseup="stopScrolling()">
+				<!-- <img class="scroll pointer" src="img/pfeil_rechts.png" 
+					ng-show="showNaviagationArrow" 
+					ng-mousedown="scroll('right')"
+					ng-mouseup="stopScrolling()"> -->
+			</div>
+		</div>
+		
+		<div ng-view></div>
+	</div>
+	
+	<div></div>
+	<div class="footer main" ng-style='leftScrollStyle'>
+		<i class="fa fa-facebook fa-lg"></i>
+		<i class="fa fa-twitter fa-lg"></i>
+		<i class="fa fa-pinterest fa-lg"></i>
+		</br> copyright © Katrin Kharitonov / Kreativ-Perspektive FOTOGRAFIE
+	</div>
+</body>
+</html>
