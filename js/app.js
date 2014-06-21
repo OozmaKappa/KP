@@ -5,7 +5,8 @@ function router($routeProvider){
 	$routeProvider.
 		when('/',{template:" ", controller:'HomeController'}).
 		when('/gallery',{template:" ", controller:'GalleryController'}).
-		when('/gallery/:theme',{template:" ", controller:'GalleryController'}).
+		when('/gallery/:theme',{templateUrl:'../partials/gallery.html', controller:'GalleryController'}).
+		when('/service',{templateUrl:'../partials/service.html', controller:'ServiceController'}).
 		otherwise({redirectTo:'/'});
 };
 
@@ -73,4 +74,8 @@ function GalleryController($scope, $routeParams, $window){
 		$window.scroll(0,0);
 	}
 };
+
+function ServiceController($scope){
+	
+}
 

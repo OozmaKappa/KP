@@ -1,3 +1,3 @@
-$( window ).resize(function() {
-	// $( "body" ).prepend( "<div>" + $( window ).width() + "</div>" );
-});
+// $( window ).resize(function() {
+// 	// $( "body" ).prepend( "<div>" + $( window ).width() + "</div>" );
+// });

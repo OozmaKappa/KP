@@ -1,0 +1,14 @@
+<div class="scroll">
+	<img  ng-repeat="path in imagePathes" src="{{path}}">
+	
+	<div class="scroll-left" ng-style='{left:leftScrollStyle}'>
+		<img class="scroll pointer" src="img/pfeil_links.png" 
+			ng-mousedown="scroll('left')"
+			ng-mouseup="stopScrolling()">
+	</div>
+	<div class="scroll-right" ng-style='{right:rightScrollStyle}'>
+		<img class="scroll pointer" src="img/pfeil_rechts.png" 
+			ng-mousedown="scroll('right')"
+			ng-mouseup="stopScrolling()">
+	</div>
+</div>

@@ -98,13 +98,13 @@ services.factory('GalleryService', ['$timeout', '$resource', '$http', function($
 		this.change = $timeout(function(){galleryService.bildwechsel(bildIndex)}, this.display_duration);
 	};
 			
-	GalleryService.prototype.fade_sequence = function( index_out, index_in, next_picture )
-	{
-		console.log(this.pictures[next_picture]);
-		$('#img' + index_out ).fadeOut(this.fade_duration);
-		$('#img' + index_in ).replaceWith( '<img class="galleryPicture" id="img' + index_in + '" src="' + this.pictures[next_picture] + '" style="display: none">' );
-		$('#img'  + index_in).fadeIn(this.fade_duration);
-	};
+	// GalleryService.prototype.fade_sequence = function( index_out, index_in, next_picture )
+	// {
+	// 	console.log(this.pictures[next_picture]);
+	// 	$('#img' + index_out ).fadeOut(this.fade_duration);
+	// 	$('#img' + index_in ).replaceWith( '<img class="galleryPicture" id="img' + index_in + '" src="' + this.pictures[next_picture] + '" style="display: none">' );
+	// 	$('#img'  + index_in).fadeIn(this.fade_duration);
+	// };
     
     return galleryService;
 }]);
